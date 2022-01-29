@@ -22,7 +22,7 @@ jobs:
            git config --global credential.helper store
            echo "https://${{ env.GITHUB_USERNAME }}:${{ secrets.GITHUB_TOKEN }}@github.com" > ~/.git-credentials
        - name: Installation
-         run: sudo bash installer.sh
+         run: bash installer.sh
        - name: Run
          run: python backup.py
          env:
