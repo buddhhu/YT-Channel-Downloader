@@ -2,6 +2,9 @@
 - Download all videos from a youtube channel and upload in a telegram channel.
 - Re-run to get newly uploaded videos.
 ---
+## NOTE
+- Edit `videos.txt` with 0 as value or delete that file.
+---
 ## Dependency
 - `ffmpeg` and `python3` are required along with the following python libraries:
 `pyrogram`, `tgcrypto`, `youtube-search-python`, `yt-dlp`, `python-decouple`
