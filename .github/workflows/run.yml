@@ -2,7 +2,7 @@ name: YT Channel Downloader
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 */6 * * *'
 env:
   GITHUB_USERNAME: buddhhu
 jobs:
@@ -24,6 +24,7 @@ jobs:
        - name: Installation
          run: bash installer.sh
        - name: Run
+         timeout-minutes: 350
          run: python backup.py
          env:
            BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
