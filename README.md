@@ -2,6 +2,8 @@
 - Download all videos from a youtube channel and upload in a telegram channel.
 - Re-run to get newly uploaded videos.
 ---
+### Example
+- An example can be found [here](t.me/justayttest)
 ## NOTE
 - Edit `videos.txt` with 0 as value or delete that file.
 ---
