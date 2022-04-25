@@ -27,7 +27,7 @@ channel = Playlist(playlist_from_channel_id(YT_CHANNEL_LINK.split("/")[-1]))
 youtube_link = "https://www.youtube.com/watch?v={}"
 thumbnail_link = "https://i.ytimg.com/vi/{}/maxresdefault.jpg"
 client = Client(
-    session_name=":memory:",
+    name=":memory:",
     api_id=API_ID,
     api_hash=API_HASH,
     bot_token=BOT_TOKEN,
