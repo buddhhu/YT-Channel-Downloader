@@ -39,11 +39,13 @@ opts = {
     "noprogress": True,
     "format": "bestvideo+bestaudio",
     "prefer_ffmpeg": True,
-    "addmetadata": True,
     "geo-bypass": True,
     "nocheckcertificate": True,
     "outtmpl": "%(id)s.%(ext)s",
-    "postprocessors": [{"key": "FFmpegMetadata"}],
+    "postprocessors": [
+        {"key": "FFmpegMetadata"},
+        {"key": "FFmpegVideoConvertor", "preferedformat": "mp4"},
+    ],
 }
 total_video = "0"
 
