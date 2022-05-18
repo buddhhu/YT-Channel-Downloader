@@ -95,8 +95,8 @@ async def main():
         total_videos += 1
         system(f"rm {info['id']}*")
         print(f"Completed {total_videos}")
+        write_tvideos(total_videos)
     print(f"Completed {total_videos}")
-    write_tvideos(total_videos)
     await client.stop()
 
 
