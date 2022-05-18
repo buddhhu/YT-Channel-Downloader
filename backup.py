@@ -68,7 +68,7 @@ print(f"Total {len(channel.videos)} videos")
 async def main():
     await client.start()
     total_videos = int(total_video)
-    for vids in range(len(channel.videos) - total_videos):
+    for vids in range(total_videos, len(channel.videos)):
         video_id = search(r"\?v=([(\w+)\-]*)", channel.videos[vids]["link"]).group(1)
         print(f"Downloading {vids+1}")
         info = YoutubeDL(opts).extract_info(youtube_link.format(video_id))
