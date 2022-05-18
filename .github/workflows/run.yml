@@ -25,6 +25,7 @@ jobs:
          run: bash installer.sh
        - name: Run
          timeout-minutes: 330
+         continue-on-error: true
          run: python backup.py
          env:
            BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
