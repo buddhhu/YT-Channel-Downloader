@@ -68,9 +68,9 @@ print(f"Total {len(channel.videos)} videos")
 async def main():
     await client.start()
     total_videos = int(total_video)
-    for vids in range(total_videos, len(channel.videos)):
-        video_id = search(r"\?v=([(\w+)\-]*)", channel.videos[vids]["link"]).group(1)
-        print(f"Downloading {vids+1}")
+    for vids in range(total_videos+1, len(channel.videos)+1):
+        video_id = search(r"\?v=([(\w+)\-]*)", channel.videos[-abs(vids)]["link"]).group(1)
+        print(f"Downloading {vids}")
         info = YoutubeDL(opts).extract_info(youtube_link.format(video_id))
         system(f"wget -qO {info['id']}.jpg " + thumbnail_link.format(info["id"]))
         files = glob(f"{info['id']}*")
@@ -92,7 +92,7 @@ async def main():
             width=info["width"],
             file_name=info["title"],
         )
-        total_videos += 1
+        total_videos = vids
         system(f"rm {info['id']}*")
         print(f"Completed {total_videos}")
         write_tvideos(total_videos)
